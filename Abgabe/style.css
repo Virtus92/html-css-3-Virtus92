@@ -1,0 +1,391 @@
+@keyframes highlightColorAnimation {
+    0% {
+        background-color: rgba(0, 53, 12, 0.31); /* Transparent */
+    }
+    50% {
+        background-color: rgba(0, 147, 35, 0.31); /* Noch dunkler */
+    }
+    100% {
+        background-color: rgba(0, 255, 64, 0.31); /* Endfarbe */
+    }
+}
+
+/* Base styles*/
+:root {
+    --primary-color: #288797;
+    --secondary-color: #133a42;
+    --text-color: #ffffff;
+    --border-radius: 15px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h4 {
+    margin-bottom: 0.5rem;
+}
+
+/* Header - Mobile First */
+header {
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+header .logo {
+    height: 60px;
+    text-align: center;
+}
+header .logo img {
+    height: 100%;
+    width: auto;
+}
+header {
+    overflow: hidden;
+}
+#myLinks {
+    display: none;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px 0;
+}
+header nav ul i {
+    color: var(--text-color);
+    font-size: 20px !important;
+}
+.dropdown {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    /*margin: 10px 0;*/
+    background-color: var(--primary-color);
+}
+.dropdown a {
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 5px;
+
+}
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        height: 80px;
+    }
+    header .logo {
+        flex: 0 0 auto;
+    }
+    header nav {
+        flex: 0 0 300px;
+    }
+    header nav ul {
+        justify-content: flex-end;
+        gap: 30px;
+        padding-right: 20px;
+    }
+}
+
+
+/* Hero Section - Mobile First */
+.hero-area {
+    background-color: var(--primary-color);
+    margin: 15px;
+    border-radius: 15px;
+}
+.hero-text {
+    padding: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+.img-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    background: url('Airbnb.webp') center/cover no-repeat;
+}
+.img-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(147, 198, 207, 0.61) 50%,
+            var(--primary-color) 100%
+    );
+    border-radius: 0 0 20px 20px;
+}
+.search-box {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    gap: 8px;
+}
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+.search-box button {
+    padding: 10px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+}
+@media (min-width: 1024px) {
+    .hero-area {
+        max-width: 1400px;
+        margin: 20px 100px;
+    }
+    .img-container {
+        height: 400px;
+    }
+    .hero-text {
+        padding: 3rem;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .search-box {
+        width: 40% !important;
+    }
+}
+
+
+/* Grid Layout - Mobile First */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    max-width: 1400px;
+}
+/* Common styles für grid items */
+.parent > article {
+    position: relative;
+    min-height: 200px;
+    border-radius: 15px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.div1 {
+    grid-column: 1 / 2; /* Erste Spalte */
+    grid-row: 1; /* Erste Zeile */
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.33) 0%,
+            rgba(74, 74, 74, 0.5) 50%,
+            rgb(0, 0, 0) 100%
+    ), url("Airbnb.webp") center;
+    background-size: cover;
+}
+.div2 {
+    grid-column: 2 / 3; /* Zweite Spalte */
+    grid-row: 1; /* Erste Zeile */
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.33) 0%,
+            rgba(74, 74, 74, 0.5) 50%,
+            rgb(0, 0, 0) 100%
+    ), url("Newsletter.jpg") bottom!important;
+    background-size: cover;
+}
+.div3 {
+    grid-column: 1 / 2; /* Erste Spalte */
+    grid-row: 2; /* Zweite Zeile */
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.33) 0%,
+            rgba(74, 74, 74, 0.5) 50%,
+            rgb(0, 0, 0) 100%
+    ), url("img1.jpg") center;
+    background-size: cover;
+}
+.div4 {
+    grid-column: 2 / 3; /* Zweite Spalte */
+    grid-row: 2; /* Zweite Zeile */
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.33) 0%,
+            rgba(74, 74, 74, 0.5) 50%,
+            rgb(0, 0, 0) 100%
+    ), url("News.jpg") center;
+    background-size: cover;
+}
+.div5 {
+    grid-column: 1 / 2; /* Über zwei Spalten */
+    grid-row: 3; /* Dritte Zeile */
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.33) 0%,
+            rgba(74, 74, 74, 0.5) 50%,
+            rgb(0, 0, 0) 100%
+    ), url("img2.jpg") center;
+    background-size: cover;
+}
+.div-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    color: var(--text-color);
+    z-index: 1;
+}
+@media (min-width: 460px) {
+    .div5 {
+        grid-column: 1 / 3; /* Über zwei Spalten */
+    }
+    .parent {
+        gap: 20px;
+    }
+}
+@media (min-width: 768px) {
+    .parent {
+        grid-template-columns: 1fr 1fr; /* Zwei gleiche Spalten */
+        margin: 20px 100px;
+    }
+}
+@media (min-width: 1024px) {
+    .parent {
+        grid-template-columns: 60% calc(40% - 20px);
+    }
+    .div5 {
+        grid-column: 1 / 3; /* Über zwei Spalten */
+    }
+}
+
+/* Price and Favorite overlays */
+.priceOverlay {
+    position: absolute;
+    top: 5px;
+    padding: 10px;
+    left: 5px;
+    background: rgba(45, 101, 59, 0.31);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Unscharfer Hintergrund */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: var(--text-color);
+    font-size: 14px;
+    z-index: 1;
+    overflow: hidden; /* Beschränkung */
+    animation: highlightColorAnimation 2s infinite;
+}
+.priceOverlay::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Über gesamten Bereich */
+    background: inherit; /* Übernimmt Hintergrundfarbe */
+    z-index: -1; /* Hinter den Text */
+}
+.favouriteOverlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background: rgba(253, 148, 148, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: var(--text-color);
+    font-size: 14px;
+}
+.favouriteOverlay::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Über gesamten Bereich */
+    background: inherit; /* Übernimmt Hintergrundfarbe */
+    z-index: -1; /* Hinter den Text */
+    border-radius: 20px;
+}
+
+/* Our Resorts Section */
+.ourResorts h2::before{
+    content: '\ea42  ';
+    font-family: 'Material Icons', serif;
+    font-size: 24px;
+    color: var(--text-color);
+}
+.ourResorts {
+    background-color: var(--secondary-color);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    scrollbar-width: thin;
+}
+.scroll-container img {
+    height: 150px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+@media (min-width: 768px) {
+    .ourResorts {
+        max-width: 1400px;
+        margin: 20px 100px;
+    }
+}
+
+/* Footer */
+.footer-content {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+}
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+.footer-text i {
+    color: var(--text-color);
+    font-size: 20px;
+}
+@media (min-width: 768px) {
+    .footer-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}

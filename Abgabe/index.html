@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Reisebüro</title>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</head>
+
+<body>
+<header>
+
+    <div class="logo">
+        <img src="Logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><i class="fa fa-search"></i></li>
+            <li><i class="fa fa-user-circle"></i></li>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <li>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+<div id="myLinks">
+    <div class="dropdown">
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </div>
+</div>
+<main>
+
+        <section class="hero-area">
+
+            <article class="hero-text">
+                <h1>Air, Sleep, Dream</h1>
+                <p>Find and book a great experience.</p>
+            </article>
+
+            <article class="img-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Suchen...">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </article>
+
+        </section>
+
+    <section class="parent">
+        <article class="div1">
+            <div class="priceOverlay">
+                <h4>€70/Person</h4>
+            </div>
+
+            <div class="favouriteOverlay">
+                <i class="fa fa-heart-o"></i>
+            </div>
+
+            <div class="div-text">
+                <h2>Mallorca</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas?</p>
+            </div>
+        </article>
+
+        <article class="div2" onclick="location.href='#'">
+            <div class="div-text">
+                <h2>Newsletter</h2>
+                <p>Sign up on our Newsletter to get -50% on your next Hotel.</p>
+            </div>
+        </article>
+
+        <article class="div3">
+            <div class="priceOverlay">
+                <h4>€70/Person</h4>
+            </div>
+
+            <div class="favouriteOverlay">
+                <i class="fa fa-heart-o"></i>
+            </div>
+
+            <div class="div-text">
+                <h2>Dubai</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas?</p>
+            </div>
+        </article>
+
+        <article class="div4" onclick="location.href='#'">
+            <div class="div-text">
+                <h2>Virtus News</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas?</p>
+            </div>
+        </article>
+
+        <article class="div5">
+            <div class="priceOverlay">
+                <h4>€70/Person</h4>
+            </div>
+
+            <div class="favouriteOverlay">
+                <i class="fa fa-heart-o"></i>
+            </div>
+
+            <div class="div-text">
+                <h2>Hawaii</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quas?</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="ourResorts">
+        <h2 style="text-align: center; color:white;">Our Resorts</h2>
+        <article class="scroll-container">
+            <img src="img2.jpg" alt="Forest">
+            <img src="img3.jpg" alt="Northern Lights">
+            <img src="Airbnb.webp" alt="Mountains">
+            <img src="img2.jpg" alt="Forest">
+            <img src="img3.jpg" alt="Northern Lights">
+            <img src="Airbnb.webp" alt="Mountains">
+        </article>
+    </section>
+
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-text">
+            <div class="social">
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Virtus Reisebüro</p>
+            <div class="copyright">
+                <p>Designed by Dinel</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
